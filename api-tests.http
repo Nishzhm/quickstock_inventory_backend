@@ -1,0 +1,42 @@
+### Health check
+GET http://localhost:5000/api/health
+
+### Get items
+GET http://localhost:5000/api/items
+
+### Get items with search, filter, sort, and pagination
+GET http://localhost:5000/api/items?search=mouse&category=Electronics&status=healthy&sortBy=quantity&order=desc&page=1&limit=8
+
+### Get dashboard stats
+GET http://localhost:5000/api/items/stats/summary
+
+### Create item
+POST http://localhost:5000/api/items
+Content-Type: application/json
+
+{
+  "name": "USB-C Cable",
+  "category": "Electronics",
+  "quantity": 20,
+  "price": 19.9,
+  "reorderLevel": 5,
+  "supplier": "Cable House",
+  "notes": "1 meter cable"
+}
+
+### Update item
+PUT http://localhost:5000/api/items/1
+Content-Type: application/json
+
+{
+  "name": "Wireless Mouse Updated",
+  "category": "Electronics",
+  "quantity": 25,
+  "price": 39.9,
+  "reorderLevel": 8,
+  "supplier": "TechZone Supplies",
+  "notes": "Updated item"
+}
+
+### Delete item
+DELETE http://localhost:5000/api/items/1
